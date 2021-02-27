@@ -50,7 +50,7 @@ test:
 production:
   <<: *default
   database: campfire_production
-  username: root
+  username: admin
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
   host: <%= ENV['DATABASE_ENDPOINT'] %>
