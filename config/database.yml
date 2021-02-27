@@ -14,7 +14,7 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: 
   socket: /tmp/mysql.sock
 
 development:
@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: campfire_production
-  username: campfire
-  password: <%= ENV['CAMPFIRE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
