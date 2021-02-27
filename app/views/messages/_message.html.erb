@@ -1,0 +1,10 @@
+<div class="message">
+  <select name="user_ids[]" id="select_<%= message.id %>">
+  <option value=<%= message.user_id %> selected><%= message.user.name %></option>
+    <% User.all.each do |user| %>
+      <option value=<%= user.id %>><%= user.name %></option>
+    <% end %>
+  </select>
+  <%= text_area_tag(:message, message.content, size: "24x2", id: "form_#{message.id}", class: "form_update") %>
+  <input type="submit" class="change_send" data-id=<%= message.id %>>
+</div>

@@ -1,0 +1,14 @@
+<h1>Chat room</h1>
+<div id ='messages'>
+  <%= render @messages %>
+</div>
+<form>
+  <label>Say something:</label><br>
+  <select name="user_ids[]" id="user_select" >
+    <% User.all.each do |user| %>
+      <option value=<%= user.id %>><%= user.name %></option>
+    <% end %>
+  </select>
+  <input type="text" data-behavior="room_speaker" id="form">
+  <input type="submit" class="send" id="submit">
+</form>
