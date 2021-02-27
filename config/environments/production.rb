@@ -109,4 +109,8 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = ENV["ACTION_CABLE_URL"]
+  config.action_cable.allowed_request_origins = [ ENV["ACTION_CABLE_ALLOWED_REQUEST_ORIGINS"] ]
 end
